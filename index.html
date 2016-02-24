@@ -78,7 +78,7 @@
       for (var i = 0; i < shuffledIds.length; i++) {
         var el = document.querySelector('#' + shuffledIds[i]);
         el.style.left = i < 4 ? '17%' : '51%';
-        el.style.top = (28 + (i % 4) * 15) + '%';
+        el.style.top = (27 + (i % 4) * 15.5) + '%';
       }
 
       // special images on hover
@@ -91,6 +91,17 @@
           el.src = 'media/' + idToImageMap[id] + '.png';
         };
       });
+
+      // resize
+      function resize() {
+        for (var i = 0; i < shuffledIds.length; i++) {
+          var el = document.querySelector('#' + shuffledIds[i]);
+          var width = parseFloat(window.getComputedStyle(el).width);
+          el.style.height = (width * 0.24) + 'px';
+        }
+      }
+      resize();
+      window.onresize = resize;
     </script>
     <script>(function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
