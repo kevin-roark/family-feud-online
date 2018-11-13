@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="media/favicon.png">
+    <title>feud.online - Family Feud Focused (Continuous) Films - Carmichael Payamps</title>
+
+    <meta name="google-site-verification" content="tUAvCSIBJjlbZM2wbGnHDq8VeKDqy5DQWTXkIIEnJrM" />
+    <meta name="description" content="Family Feud Online is a series of Family Feud Focused Films" />
+    <meta name="author" content="Carmichael Payamps">
+    <meta name="keywords" content="family feud, family, feud, online, family feud online, steve harvey, please help me look at art online">
+
+    <meta property="og:title" content="feud.online - Carmichael Payamps"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://www.feud.online/media/screenshot1.jpg"/>
+    <meta property="og:description" content="feud.online is a series of Family Feud Focused (Continuous) Films"/>
+    <meta property="og:url" content="http://www.feud.online/"/>
+
+    <meta property="fb:admins" content="100000919641751"/>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@LIMP__BISCUIT" />
+    <meta name="twitter:creator" content="@LIMP__BISCUIT" />
+</head>
+<body>
+    <div class="feud-menu">
+      <img id="a-beer" class="feud-menu-item" src="media/box1.png" />
+      <img id="a-sword" class="feud-menu-item" src="media/box2.png" />
+      <img id="five" class="feud-menu-item" src="media/box5.png" />
+      <img id="a-flashlight" class="feud-menu-item" src="media/box6.png" />
+      <a href="http://feud.carmichael.xyz/family" target="_blank">
+        <img id="who-are-you" class="feud-menu-item feud-menu-button" src="media/box3.png" />
+      </a>
+      <a href="http://feud.carmichael.xyz/mixed" target="_blank">
+        <img id="all-mixed-up" class="feud-menu-item feud-menu-button" src="media/box4.png" />
+      </a>
+      <a href="http://feud.carmichael.xyz/answers" target="_blank">
+        <img id="the-answer-is" class="feud-menu-item feud-menu-button" src="media/box7.png" />
+      </a>
+      <a href="http://feud.carmichael.xyz/double" target="_blank">
+        <img id="daily-double" class="feud-menu-item feud-menu-button" src="media/box8.png" />
+      </a>
+    </div>
+    <div class="subsidiaries">
+      <div>work by <a target="_blank" href="http://www.carmichael.xyz">Carmichael Payamps</a></div>
+      <div>
+        friends with
+        <a target="_blank" href="http://www.gods.website">God's Website</a>,
+        <a target="_blank" href="http://www.rain.carmichael.xyz">Rain in a Room</a>,
+        <a target="_blank" href="http://www.davidzwirnher.com">David Zwirnher Online</a>
+      </div>
+    </div>
+    <div class="social">
+      <div class="social-button twitter-button">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.feud.online/" data-hashtags="carmichael">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+      <div class="social-button facebook-button">
+        <div class="fb-like" data-href="http://www.feud.online/" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+      </div>
+    </div>
+
+    <script>
+      var ids = ['a-beer', 'a-sword', 'five', 'a-flashlight', 'who-are-you', 'all-mixed-up', 'the-answer-is', 'daily-double'];
+      var idToImageMap = {
+        'a-beer': 'box1',
+        'a-sword': 'box2',
+        'five': 'box5',
+        'a-flashlight': 'box6',
+        'who-are-you': 'box3',
+        'all-mixed-up': 'box4',
+        'the-answer-is': 'box7',
+        'daily-double': 'box8',
+      };
+
+      // arrange them randomly
+      var shuffledIds = ids.sort(function() { return 0.5 - Math.random(); });
+      for (var i = 0; i < shuffledIds.length; i++) {
+        var el = document.querySelector('#' + shuffledIds[i]);
+        el.style.left = i < 4 ? '17%' : '51%';
+        el.style.top = (27 + (i % 4) * 15.5) + '%';
+      }
+
+      // special images on hover
+      ['who-are-you', 'all-mixed-up', 'the-answer-is', 'daily-double'].forEach(function(id) {
+        var el = document.querySelector('#' + id);
+        el.onmouseover = function() {
+          el.src = 'media/' + idToImageMap[id] + 'h.png';
+        };
+        el.onmouseout = function() {
+          el.src = 'media/' + idToImageMap[id] + '.png';
+        };
+      });
+
+      // resize
+      function resize() {
+        for (var i = 0; i < shuffledIds.length; i++) {
+          var el = document.querySelector('#' + shuffledIds[i]);
+          var width = parseFloat(window.getComputedStyle(el).width);
+          el.style.height = (width * 0.24) + 'px';
+        }
+      }
+      resize();
+      window.onresize = resize;
+    </script>
+    <script>(function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1456043177950397";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50868415-11', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+</html>
